@@ -1,7 +1,7 @@
-#include <istream>
-#include "Student_info"
+#include "read.h"
 
 using std::istream;
+using std::vector;
 
 istream& read(istream& in; Student_info s) {
   // read and store the student's name and midterm and final exam grades

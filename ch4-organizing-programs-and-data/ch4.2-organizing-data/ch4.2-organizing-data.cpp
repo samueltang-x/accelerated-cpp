@@ -1,11 +1,10 @@
+#include "Student_info.h"
 #include <algorithm>
 #include <ios>
 #include <iomanip>
 #include <iostream>
 #include <istream>
 #include <stdexcept>
-#include <string>
-#include <vector>
 
 using std::cout;
 using std::cin;
@@ -18,12 +17,6 @@ using std::sort;
 using std::streamsize;
 using std::string;
 using std::vector;
-
-struct Student_info {
-  string name;
-  double midterm, final;
-  vector<double> homework;
-};
 
 // compute the median of a vector<double>
 double median(vector<double> vec) {
@@ -77,6 +70,11 @@ istream& read_hw(istream& in, vector<double>& hw) {
 }
 
 istream& read(istream& is, Student_info& s) {
+  cout << "Please enter student records, each one a line, for example:" << endl
+    << "Smith 93 91 47 90 92 73 100 87" << endl
+    << "Carpenter 75 90 87 92 93 60 0 98" << endl
+    << "..." << endl
+    << "Press CTRL + D to finish input:" << endl;
   // read and store the student's name and midterm and final exam grades
   is >> s.name >> s.midterm >> s.final;
 
