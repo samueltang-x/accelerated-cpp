@@ -25,8 +25,12 @@ double grade(const Student_info& s) {
 }
 
 // predicate to determine whether a student failed
-double fgrade(const Student_info& s{
+bool fgrade(const Student_info& s){
   return grade(s) < 60;
+}
+
+bool pgrade(const Student_info& s) {
+  return !fgrade(s);
 }
 
 list<Student_info> extract_fails(list<Student_info>& students) {

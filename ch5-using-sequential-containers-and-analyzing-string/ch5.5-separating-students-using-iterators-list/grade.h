@@ -15,7 +15,8 @@ double grade(double, double, const std::vector<double>&);
 double grade(const Student_info&);
 
 // predicate to determine whether a student failed
-double fgrade(const Student_info&);
+bool fgrade(const Student_info&);
+bool pgrade(const Student_info&);
 
 std::list<Student_info> extract_fails(std::list<Student_info>&);
 
