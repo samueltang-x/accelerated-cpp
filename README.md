@@ -1,0 +1,13 @@
+# accelerated-cpp
+persional practice repo for study CPP based on book Accelerated C++
+
+## Install Unit Test Environment (Google Test Framework)
+    $ sudo apt-get install libgtest-dev
+    $ sudo apt-get install cmake
+    $ cd /usr/src/gtest
+    $ sudo cmake CMakeLists.txt
+    $ sudo make
+    $ sudo cp -v *.a /usr/lib
+
+## Run UT Case
+    $ ./unit-test/test.sh
