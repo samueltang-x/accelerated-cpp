@@ -1,3 +1,6 @@
+#ifndef GUARD_another_way_to_split_h
+#define GUARD_another_way_to_split_h
+
 #include "6.1.1-another-way-to-split.h"
 #include <algorithm>
 #include <cctype>
@@ -38,3 +41,4 @@ vector<string> split(const string& s) {
   return ret;
 }
 
+#endif
