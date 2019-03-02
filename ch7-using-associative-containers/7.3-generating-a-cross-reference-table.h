@@ -1,5 +1,5 @@
-#ifndef GUARD_7_4_generating_a_cross_reference_table_h
-#define GUARD_7_4_generating_a_cross_reference_table_h
+#ifndef GUARD_7_3_generating_a_cross_reference_table_h
+#define GUARD_7_3_generating_a_cross_reference_table_h
 
 #include "../ch6-using-library-algorithms/6.1.1-another-way-to-split.h"
 #include <istream>

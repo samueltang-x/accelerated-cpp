@@ -1,4 +1,4 @@
-#include "7.4-generating-a-cross-reference-table.h"
+#include "7.3-generating-a-cross-reference-table.h"
 #include <iostream>
 
 using std::cin;
