@@ -1,6 +1,7 @@
+#include <gtest/gtest.h>
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.1-a-two-pass-solution.cpp"
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.2-a-single-pass-solution.cpp"
-#include <gtest/gtest.h>
+#include "../ch8-writing-generic-functions/src/median-of-unknown-type.cpp"
 
 using std::vector;
 
@@ -79,6 +80,17 @@ TEST(ClassifyingStudents, extractFails_partition) {
 
   EXPECT_TRUE(students_equal(students, epass));
   EXPECT_TRUE(students_equal(afail, efail));
+}
+
+// 8.1.1 Medians of unknown type
+TEST(medianGenericFunction, medianOfInt) {
+  vector<int> vec_int = {84, 28, 74, 94, 21, 13, 9, 56};
+  EXPECT_EQ(median(vec_int), 42);
+}
+
+TEST(medianGenericFunction, medianOfDouble) {
+  vector<double> vec_double = {84.92, 28.84, 74.2739, 94.01, 21.83, 13.0, 9.73, 56.29};
+  EXPECT_EQ(median(vec_double), 42.565);
 }
 
 int main(int argc, char **argv) {
