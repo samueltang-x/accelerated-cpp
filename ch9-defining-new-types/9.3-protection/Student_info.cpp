@@ -4,8 +4,9 @@ using std::ifstream;
 using std::string;
 using std::vector;
 
-// read homework grades from an input stream into a vector<double>
-ifstream& read_hw(ifstream& in, vector<double>& hw) {
+// read homework grades from input stream(standard input stream or file, etc.)
+template<class Is>
+Is& read_hw(Is& in, vector<double>& hw) {
   if (in) {
     hw.clear(); // get rid of previous contents
 
