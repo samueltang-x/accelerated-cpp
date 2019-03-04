@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <iterator>
 #include <stdexcept>
 #include <ctime>
 
@@ -10,6 +11,7 @@ using std::domain_error;
 using std::endl;
 using std::ifstream;
 using std::logic_error;
+using std::ostream_iterator;
 using std::rand;
 using std::srand;
 using std::string;
@@ -81,6 +83,9 @@ int main() {
     cout << " " << *it;
     ++it;
   }
+
+  //copy(sentence.begin(), sentence.end(), ostream_iterator<string>(cout, " "));
+
   cout << '.' << endl;
   return 0;
 }

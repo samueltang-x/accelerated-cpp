@@ -70,11 +70,6 @@ istream& read_hw(istream& in, vector<double>& hw) {
 }
 
 istream& read(istream& is, Student_info& s) {
-  cout << "Please enter student records, each one a line, for example:" << endl
-    << "Smith 93 91 47 90 92 73 100 87" << endl
-    << "Carpenter 75 90 87 92 93 60 0 98" << endl
-    << "..." << endl
-    << "Press CTRL + D to finish input:" << endl;
   // read and store the student's name and midterm and final exam grades
   is >> s.name >> s.midterm >> s.final;
 
@@ -92,6 +87,11 @@ int main() {
   Student_info record;
   string::size_type maxlen = 0;
 
+  cout << "Please enter student records, each one a line, for example:" << endl
+    << "Smith 93 91 47 90 92 73 100 87" << endl
+    << "Carpenter 75 90 87 92 93 60 0 98" << endl
+    << "..." << endl
+    << "Press CTRL + D to finish input:" << endl;
   // read and store all the students, and find the length of the longest name
   while (read(cin, record)) {
     maxlen = max(maxlen, record.name.size());
