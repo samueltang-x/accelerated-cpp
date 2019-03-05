@@ -2,6 +2,7 @@
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.1-a-two-pass-solution.cpp"
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.2-a-single-pass-solution.cpp"
 #include "../ch8-writing-generic-functions/src/median-of-unknown-type.cpp"
+#include "../ch10-managing-memory-and-low-level-data-structures/letter-grade.h"
 
 using std::vector;
 
@@ -91,6 +92,13 @@ TEST(medianGenericFunction, medianOfInt) {
 TEST(medianGenericFunction, medianOfDouble) {
   vector<double> vec_double = {84.92, 28.84, 74.2739, 94.01, 21.83, 13.0, 9.73, 56.29};
   EXPECT_EQ(median(vec_double), 42.565);
+}
+
+// 10. Managing memory and low level data structures
+TEST(MemoryAndLowLevelDataStructures, letterGrade) {
+  EXPECT_EQ(letter_grade(92), "A-");
+  EXPECT_EQ(letter_grade(77), "C+");
+  EXPECT_EQ(letter_grade(-77), "?\?\?");
 }
 
 int main(int argc, char **argv) {
