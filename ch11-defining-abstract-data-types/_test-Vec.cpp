@@ -1,33 +1,36 @@
-#include "Student_info.h"
+#include "../ch6-using-library-algorithms/6.1.1-another-way-to-split.h"
+#include "../ch9-defining-new-types/9.3-protection/Student_info.h"
+#include "Vec.h"
+#include "test-Vec.h"
 #include <algorithm>
+#include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <ios>
 #include <stdexcept>
 #include <string>
-#include <vector>
 
 using std::cerr;
 using std::cout;
 using std::domain_error;
 using std::endl;
+using std::getline;
 using std::ifstream;
+using std::ios;
 using std::max;
 using std::setprecision;
-using std::string;
+using std::sort;
 using std::streamsize;
-using std::vector;
+using std::string;
 
-int main() {
-  vector<Student_info> students;
+int test_vec() {
+  Vec<Student_info> students;
   Student_info record;
   string::size_type maxlen = 0;
 
   // read and store the data
-  ifstream inFile;
-  inFile.open("./data/students-data.txt");
+  ifstream inFile("data/students-data.txt"); 
   if (!inFile) {
-    cerr << "Failed to open data file: ./data/students-data.txt." << endl;
+    cerr << "Failed to open input file: data/students-data.txt" << endl;
     return 1;
   }
 
@@ -40,8 +43,9 @@ int main() {
   sort(students.begin(), students.end(), compare);
 
   // write the names and grades
-  for (vector<Student_info>::size_type i = 0; i != students.size(); ++i) {
+  for (Vec<Student_info>::size_type i = 0; i != students.size(); ++i) {
     cout << students[i].name() << string(maxlen + 1 - students[i].name().size(), ' ');
+
     try {
       double final_grade = students[i].grade();
       streamsize prec = cout.precision();

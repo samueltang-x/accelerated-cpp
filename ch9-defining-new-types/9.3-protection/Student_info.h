@@ -1,3 +1,6 @@
+#ifndef GUARD_9_3_Student_info_h
+#define GUARD_9_3_Student_info_h
+
 #include <fstream>
 #include <string>
 #include <vector>
@@ -20,3 +23,5 @@ class Student_info {
 };
 
 bool compare(const Student_info&, const Student_info&);
+
+#endif

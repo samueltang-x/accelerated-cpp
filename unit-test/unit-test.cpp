@@ -3,7 +3,9 @@
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.2-a-single-pass-solution.cpp"
 #include "../ch8-writing-generic-functions/src/median-of-unknown-type.cpp"
 #include "../ch10-managing-memory-and-low-level-data-structures/letter-grade.h"
+#include "../ch11-defining-abstract-data-types/test-Vec.h"
 
+using std::ofstream;
 using std::vector;
 
 bool students_equal(const vector<Student_info>& v1, const vector<Student_info>& v2) {
@@ -99,6 +101,17 @@ TEST(MemoryAndLowLevelDataStructures, letterGrade) {
   EXPECT_EQ(letter_grade(92), "A-");
   EXPECT_EQ(letter_grade(77), "C+");
   EXPECT_EQ(letter_grade(-77), "?\?\?");
+}
+
+// 11 Customized Vec type
+TEST(CustomizedVec, VecOfInt) {
+  EXPECT_EQ(test_vec_int(), 0);
+}
+TEST(CustomizedVec, VecOfChar) {
+  EXPECT_EQ(test_vec_char(), 0);
+}
+TEST(CustomizedVec, VecOfStudentInfo) {
+  EXPECT_EQ(test_vec_students(), 0);
 }
 
 int main(int argc, char **argv) {
