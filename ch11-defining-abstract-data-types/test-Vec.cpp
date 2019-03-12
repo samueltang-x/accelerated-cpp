@@ -8,7 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <iostream>
+#include <vector>
 
 using std::cerr;
 using std::domain_error;
@@ -23,6 +23,7 @@ using std::setprecision;
 using std::sort;
 using std::streamsize;
 using std::string;
+using std::vector;
 
 static string REPORT_FILE = "../report/test-Vec.log";
 
@@ -93,4 +94,28 @@ int test_vec_students() {
   }
   out << "--- End ---" << endl << endl;;
   return 0;
+}
+
+string test_vec_clear_erase() {
+  string s = "failed";
+  Vec<string> vs(1, s);
+  vs.clear();
+  vs.push_back("It");
+  vs.push_back("not");
+  vs.push_back("succeed");
+  vs.push_back(".");
+  
+  Vec<string>::iterator it = vs.begin();
+  while (it != vs.end()) {
+    if (*it == "not")
+      it = vs.erase(it);
+    else
+      ++it;
+  }
+
+  string ret = "";
+  for (Vec<string>::const_iterator i = vs.begin(); i != vs.end(); ++i)
+    ret = ret + ' ' + *i;
+
+  return ret;
 }

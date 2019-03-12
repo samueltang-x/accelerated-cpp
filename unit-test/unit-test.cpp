@@ -113,6 +113,9 @@ TEST(CustomizedVec, VecOfChar) {
 TEST(CustomizedVec, VecOfStudentInfo) {
   EXPECT_EQ(test_vec_students(), 0);
 }
+TEST(CustomizedVec, clearAndErase) {
+  EXPECT_EQ(test_vec_clear_erase(), " It succeed .");
+}
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);

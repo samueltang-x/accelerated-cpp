@@ -36,6 +36,10 @@ template <class T> class Vec {
       unchecked_append(val);
     }
 
+    void clear() { uncreate(); }
+
+    iterator erase(iterator);
+
   private:
     iterator data;
     iterator avail;
@@ -118,6 +122,19 @@ template <class T> void Vec<T>::grow() {
 
 template <class T> void Vec<T>::unchecked_append(const T& t) {
   alloc.construct(avail++, t);
+}
+
+template <class T> typename Vec<T>::iterator Vec<T>::erase(iterator it) {
+  iterator next_it = it + 1;
+
+  alloc.destroy(it);
+  while (it + 1 != avail) {
+    alloc.construct(it, *(it + 1));
+    alloc.destroy(++it);
+  }
+
+  --avail;
+  return next_it;
 }
 
 #endif
