@@ -1,0 +1,8 @@
+build
+report
+
+unit-test/CMakeFiles
+unit-test/CMakeCache.txt
+unit-test/executeTests
+unit-test/Makefile
+unit-test/cmake_install.cmake

@@ -13,6 +13,7 @@ add_executable(executeTests
   ../ch9-defining-new-types/9.3-protection/Student_info.cpp
   ../ch10-managing-memory-and-low-level-data-structures/letter-grade.cpp
   ../ch11-defining-abstract-data-types/test-Vec.cpp
+  tests/test-Str.cpp
   unit-test.cpp
   )
 target_link_libraries(executeTests ${GTEST_LIBRARIES} pthread)

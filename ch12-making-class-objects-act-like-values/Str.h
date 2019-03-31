@@ -2,9 +2,14 @@
 #define GUARD_Str_h
 
 #include "../ch11-defining-abstract-data-types/Vec.h"
+#include <algorithm>
+#include <cstring>
+#include <cctype>
+#include <iostream>
+#include <iterator>
 
 class Str {
-  friend std::istream& operator>>(std::istream, Str&);
+  friend std::istream& operator>>(std::istream&, Str&);
 
   public:
     typedef Vec<char>::size_type size_type;
@@ -64,7 +69,7 @@ std::istream& operator>>(std::istream& is, Str& s) {
   return is;
 }
 
-Str& operator+(const Str& s1, const Str& s2) {
+Str operator+(const Str& s1, const Str& s2) {
   Str t = s1;
   t += s2;
   return t;

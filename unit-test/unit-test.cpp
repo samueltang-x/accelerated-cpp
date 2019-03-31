@@ -4,6 +4,7 @@
 #include "../ch8-writing-generic-functions/src/median-of-unknown-type.cpp"
 #include "../ch10-managing-memory-and-low-level-data-structures/letter-grade.h"
 #include "../ch11-defining-abstract-data-types/test-Vec.h"
+#include "tests/test-Str.h"
 
 using std::ofstream;
 using std::vector;
@@ -115,6 +116,11 @@ TEST(CustomizedVec, VecOfStudentInfo) {
 }
 TEST(CustomizedVec, clearAndErase) {
   EXPECT_EQ(test_vec_clear_erase(), " It succeed .");
+}
+
+// 12. Str class
+TEST(Str, concateStr) {
+  EXPECT_EQ(test_Str(), true);
 }
 
 int main(int argc, char **argv) {

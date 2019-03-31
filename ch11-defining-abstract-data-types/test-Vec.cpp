@@ -25,7 +25,7 @@ using std::streamsize;
 using std::string;
 using std::vector;
 
-static string REPORT_FILE = "../report/test-Vec.log";
+static string REPORT_FILE = "report/test-Vec.log";
 
 int test_vec_int() {
   ofstream out(REPORT_FILE.c_str());
