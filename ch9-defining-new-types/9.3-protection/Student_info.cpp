@@ -1,4 +1,5 @@
 #include "grade.h"
+#include "Student_info.h"
 
 using std::ifstream;
 using std::string;

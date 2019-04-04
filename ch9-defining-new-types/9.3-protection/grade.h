@@ -1,7 +1,6 @@
 #ifndef GUARD_grade_h
 #define GUARD_grade_h
 
-#include "Student_info.h"
 #include <vector>
 
 // compute a student's overall grade from midterm and final exam grades and homework grade
