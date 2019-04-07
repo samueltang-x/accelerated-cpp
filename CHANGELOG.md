@@ -1,4 +1,6 @@
 ## TODO:
+
+## 0.3.0 (2019-04-04)
 * add test tool to compare if two files are the same and print the diff if any.
 * move test code of ch13 to unit-test dir
 

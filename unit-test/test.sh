@@ -12,7 +12,10 @@ function test() {
 
   [ -d $reportDir ] || mkdir -v $reportDir
   ./executeTests
+  testStatus=$?
+
   cd - > /dev/null
+  return $testStatus
 }
 
 test

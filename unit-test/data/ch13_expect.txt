@@ -1,0 +1,5 @@
+Carpenter 86.8
+John      85.4
+Lily      84
+Samuel    90.4
+Smith     90.4

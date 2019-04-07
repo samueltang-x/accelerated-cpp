@@ -1,10 +1,12 @@
 #include <gtest/gtest.h>
+#include "tests/test-tool-files.h"
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.1-a-two-pass-solution.cpp"
 #include "../ch6-using-library-algorithms/6.3-classifying-students-revisited/6.3.2-a-single-pass-solution.cpp"
 #include "../ch8-writing-generic-functions/src/median-of-unknown-type.cpp"
 #include "../ch10-managing-memory-and-low-level-data-structures/letter-grade.h"
 #include "../ch11-defining-abstract-data-types/test-Vec.h"
 #include "tests/test-Str.h"
+#include "tests/test-Core-Grad.h"
 
 using std::ofstream;
 using std::vector;
@@ -20,6 +22,11 @@ bool students_equal(const vector<Student_info>& v1, const vector<Student_info>& 
   }
 
   return true;
+}
+
+TEST(Tools, files_areSameContentFiles) {
+  EXPECT_TRUE(test_areSameContentFiles());
+  EXPECT_FALSE(test_areSameContentFiles_diff());
 }
 
 // 6.3.1-a-two-pass-solution.cpp
@@ -121,6 +128,11 @@ TEST(CustomizedVec, clearAndErase) {
 // 12. Str class
 TEST(Str, concateStr) {
   EXPECT_EQ(test_Str(), true);
+}
+
+// 13. classes Core and Grad
+TEST(Core_Grad, usingCoreGrad) {
+  EXPECT_TRUE(test_Core_Grade());
 }
 
 int main(int argc, char **argv) {
